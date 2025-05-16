@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+yfinance
+pandas
+python-dotenv
+pydantic
+langchain
+langchain-openai
+openai
+pytest
