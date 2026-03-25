@@ -9,6 +9,7 @@ def test_health_endpoint():
     assert response.status_code == 200
     body = response.json()
     assert body["status"] == "ok"
+    assert body["service"] == "financial_insight_api"
     assert "env" in body
 
 
@@ -17,6 +18,8 @@ def test_docs_endpoint():
     assert response.status_code == 200
 
 
-def test_openapi_schema_available():
+def test_openapi_endpoint():
     response = client.get("/openapi.json")
     assert response.status_code == 200
+    body = response.json()
+    assert "paths" in body
