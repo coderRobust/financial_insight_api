@@ -49,3 +49,20 @@ OPENAI_MODEL=gpt-4o
 ## 📷 Screenshots
 
 Swagger UI, GenAI summary response, ingestion preview, comparison, and metrics — available in attached doc.
+# Financial Insight API
+
+A FastAPI-based backend service for financial insight workflows.
+
+## Requirements
+
+- Python 3.11+
+- pip
+
+## Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/coderRobust/financial_insight_api.git
+cd financial_insight_api
+pip install -r requirements.txt
