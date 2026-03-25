@@ -46,6 +46,21 @@ def summary():
         return {"summary": generate_summary()}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+@router.get("/", tags=["Root"])
+def root():
+    return {
+        "message": "Financial Insight API is running"
+    }
+
+
+@router.get("/info", tags=["Info"])
+def info():
+    return {
+        "service": "financial_insight_api",
+        "environment": settings.APP_ENV,
+        "log_level": settings.LOG_LEVEL,
+    }
 
 
 @router.post("/test/mock_data")

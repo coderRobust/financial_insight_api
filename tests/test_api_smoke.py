@@ -21,5 +21,4 @@ def test_docs_endpoint():
 def test_openapi_endpoint():
     response = client.get("/openapi.json")
     assert response.status_code == 200
-    body = response.json()
-    assert "paths" in body
+    assert "paths" in response.json()
