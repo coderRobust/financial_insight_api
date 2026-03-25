@@ -4,8 +4,8 @@ from app.config import settings
 
 app = FastAPI(
     title="Financial Insight Engine",
-    version="1.0.0",
-    description="API service for financial insight workflows."
+    version="1.1.0",
+    description="API service for financial insight workflows.",
 )
 
 app.include_router(router)
@@ -16,5 +16,5 @@ def health():
     return {
         "status": "ok",
         "env": settings.APP_ENV,
-        "service": "financial_insight_api"
+        "service": "financial_insight_api",
     }
