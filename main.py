@@ -17,4 +17,5 @@ def health():
         "status": "ok",
         "env": settings.APP_ENV,
         "service": "financial_insight_api",
+        "version": "1.1.0"
     }

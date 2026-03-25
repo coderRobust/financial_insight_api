@@ -8,9 +8,12 @@ def test_health_endpoint():
     response = client.get("/health")
     assert response.status_code == 200
     body = response.json()
+
     assert body["status"] == "ok"
     assert body["service"] == "financial_insight_api"
-    assert "env" in body
+
+    # 👇 THIS IS KEY
+    assert "version" in body
 
 
 def test_docs_endpoint():

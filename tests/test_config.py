@@ -19,3 +19,18 @@ def test_settings_dict_contains_expected_keys():
     assert "HOST" in data
     assert "PORT" in data
     assert "LOG_LEVEL" in data
+    
+    
+def test_config_values_match_endpoint():
+    from fastapi.testclient import TestClient
+    from main import app
+
+    client = TestClient(app)
+
+    response = client.get("/config-check")
+    assert response.status_code == 200
+
+    data = response.json()
+
+    assert data["env"] == settings.APP_ENV
+    assert data["port"] == settings.PORT

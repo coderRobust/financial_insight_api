@@ -75,3 +75,12 @@ def inject_mock_data():
     df = pd.DataFrame({"Close": close_prices}, index=hours)
     data_store["BTC"] = df
     return {"status": "mock BTC data injected"}
+
+
+@router.get("/config-check", tags=["Debug"])
+def config_check():
+    return {
+        "env": settings.APP_ENV,
+        "log_level": settings.LOG_LEVEL,
+        "port": settings.PORT
+    }
